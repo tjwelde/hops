@@ -22,6 +22,7 @@ function findNodeModules(start) {
 }
 
 function shouldIncludeExternalModuleInBundle(module) {
+  return true;
   return (
     module.indexOf('hops') === 0 ||
     module.indexOf('core-js') === 0 ||
