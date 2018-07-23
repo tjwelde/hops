@@ -1,0 +1,17 @@
+{
+  "name": "fixture-jest-preset",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">= 8.10"
+  },
+  "jest": {
+    "testEnvironment": "../../helpers/env.js",
+    "preset": "jest-preset-hops"
+  },
+  "dependencies": {
+    "hops-preset-defaults": "*",
+    "hops-react": "*",
+    "jest-preset-hops": "*"
+  }
+}
