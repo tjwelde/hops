@@ -1,0 +1,22 @@
+const { getBuildConfig } = require('@untool/webpack');
+
+try {
+  getBuildConfig('node');
+} catch (e) {
+  console.log(e);
+}
+
+module.exports = {
+  moduleNameMapper: {
+    '^.+\\.(png|gif|jpe?g|webp|html|svg|((o|t)tf)|woff2?|ico)$':
+      'jest-preset-hops/mocks/file.js',
+    '^.+\\.tpl$': 'jest-preset-hops/mocks/tpl.js',
+    '^.+\\.css$': 'identity-obj-proxy',
+  },
+  transform: {
+    '^.+\\.(js|jsx|mjs)$': 'jest-preset-hops/transforms/babel.js',
+    '^.+\\.(gql|graphql)$': 'jest-preset-hops/transforms/graphql.js',
+  },
+  transformIgnorePatterns: [],
+  setupFiles: ['regenerator-runtime/runtime'],
+};
